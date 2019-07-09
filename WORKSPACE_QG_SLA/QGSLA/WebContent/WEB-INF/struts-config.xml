@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN"
+          "http://jakarta.apache.org/struts/dtds/struts-config_1_2.dtd">
+<struts-config>
+<!-- Origenes de datos -->
+<data-sources>
+</data-sources>
+<!-- Beans de formulario -->
+<form-beans>
+	<form-bean name="LoginForm" type="com.qualitygardian.web.qgsla.vc.struts.form.LoginForm">
+     <form-property name="cuspp"         type="java.lang.String" />
+     <form-property name="tipolocal"     type="java.lang.String" />
+     <form-property name="nroSolPension" type="java.lang.String" />
+     <form-property name="motivoReverso" type="java.lang.String" />
+     <form-property name="mensaje"       type="java.lang.String" />  
+ 	</form-bean>
+	<form-bean name="ReversaForm" type="com.qualitygardian.web.qgsla.vc.struts.form.ReversaForm"></form-bean>
+
+</form-beans>
+
+
+<!-- Excepciones globales -->
+<global-exceptions>
+</global-exceptions>
+<!-- Reenvios globales -->
+<global-forwards>
+	<forward name="login" path="Login.do?metodo=loginForm" redirect="true"/>
+	<forward name="bienvenido" path="Bienvenido.do" redirect="true"/>
+	<forward name="Error" path=".error" redirect="true"/>
+  <forward name="loginDirecto" path="Login.do?metodo=signInDirecto" redirect="true"/>
+</global-forwards>
+
+
+<!-- Correlaciones de accion -->
+<action-mappings>
+	<action path="/Login" type="com.qualitygardian.web.qgsla.vc.struts.action.LoginAction" parameter="metodo" name="LoginForm">
+		<forward name="Login" path="/general/login.jsp"></forward>
+	</action>
+	<action path="/Bienvenido" type="com.qualitygardian.web.qgsla.vc.struts.action.BienvenidoAction">
+		<forward name="Bienvenido" path=".bienvenido"></forward>
+	</action>
+		<action path="/Reversa" type="com.qualitygardian.web.qgsla.vc.struts.action.ReversaAction" parameter="metodo" name="ReversaForm" scope="request">
+		<forward name="consultaSolicitud" path=".consultaSolicitud"></forward>   
+  </action>
+
+</action-mappings>
+<!-- Recursos de mensaje -->
+          
+<message-resources parameter="ApplicationResources"/>
+
+<plug-in className="org.apache.struts.tiles.TilesPlugin">
+	<!-- Path to XML definition file -->
+	<set-property property="definitions-config" value="/WEB-INF/tiles-defs.xml" />
+	<!-- Set Module-awareness to true -->
+	<set-property property="moduleAware" value="true" />
+</plug-in>
+</struts-config>

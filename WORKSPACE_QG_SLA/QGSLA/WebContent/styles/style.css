@@ -1,0 +1,529 @@
+/* Etiqueta para el estilo del body */
+body {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	SCROLLBAR-FACE-COLOR: #ffffff;
+	SCROLLBAR-HIGHLIGHT-COLOR: #ffffff;
+	SCROLLBAR-SHADOW-COLOR: #a5abbe;
+	SCROLLBAR-3DLIGHT-COLOR: #a5abbe;
+	SCROLLBAR-ARROW-COLOR: #073c68;
+	SCROLLBAR-TRACK-COLOR: #d4d8e4;
+	SCROLLBAR-DARKSHADOW-COLOR: #a5abbe
+}
+
+/* etiqueta de estilo para los links en general */
+a:link {
+	color: #42A6DE;
+	text-decoration: none;
+}
+
+a:visited {
+	color: #42A6DE;
+	text-decoration: none;
+}
+a:hover {
+	color: #42A6DE;
+	text-decoration: underline;
+}
+a:active {
+	color: #42A6DE;
+	text-decoration: none;
+}
+
+.simple {text-decoration: underline;}
+/* fin de la etiqueta */ 
+
+/* clase para los combos, listas */
+.List {
+	font-family: verdana;
+	font-size: 10px;
+	color: #000000;
+	border-style:groove;
+	background:#FBFBFB;
+}
+
+.boton {
+	font-family: verdana;
+	font-size: 10px;
+	font-weight:bold;
+	color: #000000;
+	border:0px;
+	background:#FFFFFF;
+}
+
+.button2{	
+	color: #000000;
+	background-color: #E5E6EE; /*fff8b3;*/
+	padding: 3px;
+	border: 1px solid #5F5207;
+	cursor: pointer;
+	padding-bottom: 0px;
+	padding-top: 0px;
+	font-size:9px;
+	font-family:Verdana;
+}
+
+
+/* clase para las cajas de texto */ 
+.Textfield {
+	font-family: verdana;
+	font-size: 10px;
+	color: #000000;
+	background:#FBFBFB;
+	border-bottom:groove 0px thin;
+	border-top:groove 0px thin;
+	border-left:groove 0px thin;
+	border-right:groove 0px thin;
+}
+
+.Textfield2 {
+	font-family: verdana;
+	font-size: 10px;
+	color: #000000;
+	border-style:groove;
+	background:#FFFFFF;
+}
+
+/* clase para los titulos */
+.Titulo_Negro {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	margin-left:10px;
+	margin-bottom:12px;
+	color:#000000;
+	font-weight:bold;
+}
+
+/* clase para texto solo */
+.Texto1 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	color: #000000;
+}
+/* clase para texto solo */
+.Texto2 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 15px;
+	color: #f1f1f1;
+  font-weight:bold; 
+}
+.Texto3 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 9px;
+	color: #565656;
+}
+.Texto4
+{
+    font-size: 6.5pt;
+    color: black;
+    font-family: Verdana;
+    text-decoration: none;
+}
+
+/* clase para los filtros */
+.Principal {
+	BORDER-RIGHT: #005588 1px solid; 
+  BORDER-TOP: #005588 1px solid; 
+  BORDER-LEFT: #005588 1px solid; 
+  BORDER-BOTTOM: #005588 1px solid; 
+  BACKGROUND-COLOR: #ffffff;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:10px;
+	color:#000000;
+}
+
+/* clase para interfaz Busqueda de Destinatario */
+.Principal4 {
+	BORDER-RIGHT: #406CA7 1px solid; 
+  BORDER-TOP: #406CA7 1px solid; 
+  BORDER-LEFT: #406CA7 1px solid; 
+  BORDER-BOTTOM: #406CA7 1px solid; 
+  BACKGROUND-COLOR: #406CA7;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:10px;
+	color:#ffffff;
+}
+
+/*PENDIENTES DE SUPERVISOR*/
+
+.text_pendiente
+{
+    font-weight: bold;
+    font-size: 10px;
+    color: #ffffff;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    BACKGROUND-COLOR: #ff0000;
+}
+
+/* clase para tablas con borde */ 
+.Principal2 {
+	BORDER-RIGHT: #005588 1px solid; BORDER-TOP: #005588 1px solid; BORDER-LEFT: #005588 1px solid; BORDER-BOTTOM: #005588 1px solid; BACKGROUND-COLOR: #ffffff;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:10px;
+	color:#000000
+}
+
+/* clase para celdas con borde inferior y fondo blanco */
+.TdMant {	
+	BORDER-BOTTOM: #005588 1px solid; BACKGROUND-COLOR: #ffffff;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:10px;
+	color:#000000
+}
+
+/* clase para celdas con borde inferior y fondo blanco */
+.TdMantColor {	
+	BORDER-BOTTOM: #005588 1px solid; BACKGROUND-COLOR: #E5F2F8;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:10px;
+	color:#000000
+}
+
+/* clase para el boton que es una imagen */
+.IconoButton{
+	cursor:pointer;
+	border:0px;
+}
+
+/* clase para la configuracion de los bordes de una tabla */ 
+.2 {
+	BORDER-RIGHT: 0px; BORDER-TOP: 0px; BORDER-LEFT: 0px; BORDER-BOTTOM: 0px; CELLSPACING: 1px; BGCOLOR: #FFFFFF; CELLPADDING: 0px;
+}
+
+/* clase para el pie de pagina que tendra la paginación */
+.Pie {
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 9px;
+	color: #333333;
+}
+
+/* clase cabecera de una tabla */ 
+.Header {
+	  FONT-WEIGHT: bolder;
+  	COLOR: white; 
+  	BACKGROUND-COLOR: #c2d5dc;
+  	font-family: Verdana, Arial, Helvetica, sans-serif;
+	  font-size: 10px;
+	  color: #000000;
+}
+
+.HeaderLote {
+	  FONT-WEIGHT: bolder;
+  	COLOR: white; 
+  	font-family: Verdana, Arial, Helvetica, sans-serif;
+	  font-size: 10px;
+	  color: #000000;
+}
+
+/* clase cabecera de una tabla busqueda destinatario */ 
+.HeaderBlue {
+  BORDER-RIGHT: #ffffff 1px solid; 
+  BORDER-TOP: #ffffff 1px solid; 
+  BORDER-LEFT: #ffffff 1px solid; 
+  BORDER-BOTTOM: #ffffff 1px solid;
+	FONT-WEIGHT: bolder;
+  COLOR: white; 
+  BACKGROUND-COLOR: #406CA7;
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	color: #ffffff;
+}
+
+/* clase para la celda de una tabla que estara de color verde claro */ 
+.Row1 {
+	PADDING-LEFT: 3px;
+	COLOR: black; 
+ 	BORDER-BOTTOM: #b3d7f4 1px double;
+  	FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; 
+ 	BACKGROUND-COLOR: #E5F2F8;
+  	TEXT-DECORATION: none;
+  	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	color: #000000;
+}
+
+/* clase para la celda de una tabla que estara de color blanco */ 
+.Row5 {
+	PADDING-LEFT: 3px; 
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	color: #000000;
+	FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; 
+	TEXT-DECORATION: none
+}
+
+/* CLASE LINK */
+/* estilo cuando el mouse esta fuera de el*/
+A.Link {
+	FONT-SIZE: 7pt; COLOR:  #ee2e24; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif
+}
+/* estilo cuando el mouse esta sobre el */
+A:hover .Link {
+	COLOR: #ee2e24; TEXT-DECORATION: underline; FONT-SIZE: 7pt; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif
+}
+
+.Titulo_Celeste {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #1F80B4;
+}
+
+.Titulo_Negro {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #000000;
+}
+
+/*Clase de estilo para indicar q la caja de texto se muestre en mayuscula*/
+.TextMay{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	color: #000000;
+	background:#FBFBFB;
+	border-bottom:groove 1px thin;
+	border-top:groove 1px thin;
+	border-left:groove 1px thin;
+	border-right:groove 1px thin;
+	text-transform:uppercase;
+}
+
+/*Clase de estilo para indicar q la caja de texto sea obligatorio*/
+.TextObli{
+	background-color: #FFFFE1 ;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	color: #000000;
+	border-bottom:groove 1px thin;
+	border-top:groove 1px thin;
+	border-left:groove 1px thin;
+	border-right:groove 1px thin;
+}
+
+/*Clase de estilo para indicar q la caja de texto se muestre en mayuscula*/
+.TextMayObli{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	color: #000000;
+	background-color: #FFFFE1 ;
+	border-bottom:groove 1px thin;
+	border-top:groove 1px thin;
+	border-left:groove 1px thin;
+	border-right:groove 1px thin;
+	text-transform:uppercase;
+}
+
+
+/************* LUIGUI ************/
+table.its tr.even {
+	background-color: #ffffff;
+  font-family: Verdana, Arial, Helvetica, sans-serif; 
+  font-size: 10px;
+  white-space: nowrap;
+}
+table.its tr.odd {
+	background-color: #E5F2F8;
+  font-family: Verdana, Arial, Helvetica, sans-serif; 
+  font-size: 10px;
+  white-space: nowrap;
+}
+table.its a:link {
+	color: #000000;
+  font-family: Verdana, Arial, Helvetica, sans-serif; 
+  font-size: 10px;
+ 
+}
+table.its a:visited {
+	color: #000000;
+	text-decoration: none;
+}
+table.its a:hover {
+	color: #000000;
+	text-decoration: underline;
+}
+table.its a:active {
+	color: #000000;
+	text-decoration: none;
+}
+
+/* clase cabecera de una tabla */ 
+.Cabecera {
+  background: buttonface;
+	border-width: 1px;
+	border-style: solid;
+	border-color: threedhighlight threedshadow threedshadow threedhighlight;
+	/*cursor: hand;*/
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	color: #000000;
+	background-color:#c2d5dc;
+}
+
+.CabeceraSinLink {
+  background: buttonface;
+	border-width: 1px;
+	border-style: solid;
+	border-color: threedhighlight threedshadow threedshadow threedhighlight;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	color: #000000;
+	background-color:#c2d5dc;
+	
+}
+
+.CabeceraEnunciado {
+  background: buttonface;
+	border-width: 1px;
+	border-style: solid;
+	border-color: threedhighlight threedshadow threedshadow threedhighlight;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	color: #000000;
+	background-color:#c2d5dc;
+}
+
+.comentario {
+	COLOR: black; 
+  FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; 
+  font-size: 10px;
+	color: #000000;
+}
+.fondoSubMenu {
+  font-family:Verdana, Arial, Helvetica, sans-serif;
+  font-size:13px;
+  color: rgb(102,102,102);
+  border-left:solid thin   ;
+  border-top:solid thin ;
+  border-bottom:solid thin ;
+  border-right:solid thin ;
+  background:rgb(240,240,240)   ;
+}
+.TextoCabecera {	
+	background-color:#c2d5dc;
+	border-style: none; 	
+  	TEXT-DECORATION: none;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:10px;
+	color:#000000;
+	font-weight:bold;
+}
+.listaObli{
+  background-color: #FFFFE1 ;
+  overflow:auto;
+  font-family: Verdana, Arial, Helvetica, sans-serif; 
+  font-size: 9px;
+  width:27.5em;
+  height:10.1em;
+  border-left:1px solid #404040;
+  border-top:1px solid #404040;
+  border-bottom:1px solid #d4d0c8;
+  border-right:1px solid #d4d0c8;
+}
+
+.lista{
+  overflow:auto;
+  font-family: Verdana, Arial, Helvetica, sans-serif; 
+  font-size: 9px;
+  width:27.5em;
+  height:10.1em;
+  border-left:1px solid #404040;
+  border-top:1px solid #404040;
+  border-bottom:1px solid #d4d0c8;
+  border-right:1px solid #d4d0c8;
+}
+.Mensaje {
+  font-family:Verdana, Arial, Helvetica, sans-serif;
+  font-size:10px;
+  color: Red;
+  border-left:none ;
+  border-top:none;
+  border-bottom:none;
+  border-right:none;
+}
+.TextoDatos {
+  PADDING-LEFT: 3px;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:10px;
+	color:#000000;
+  border-left:none ;
+  border-top:none;
+  border-bottom:none;
+  border-right:none;
+}
+
+/*MENU FLOTANTE*/
+div#tbl-container {
+width: 100%;
+height: 230px;
+overflow: auto;
+align: center;
+scrollbar-base-color:#ffeaff;
+}
+thead th, thead th.locked	{
+font-family: Verdana, Arial, Helvetica, sans-serif;
+font-size: 10px;
+color: #ffffff;
+background-color:#42A6DE
+/*font-weight: bold;*/
+text-align: center;
+color: white;
+border-right: 1px solid silver;
+position:relative;
+cursor: default; 
+}
+	
+/* thead th {
+top: expression(document.getElementById("tbl-container").scrollTop-2); IE5+ only
+z-index: 20;
+} */
+
+thead th.locked {z-index: 30;}
+
+td.locked,  th.locked{
+background-color: #ffeaff;
+/*font-weight: bold;*/
+border-right: 1px solid silver;
+left: expression(document.getElementById("tbl-container").scrollLeft); /* IE5+ only */
+position: relative;
+z-index: 10;
+}
+
+td.FilasTablaRes
+{
+    background:#F0F8FF ;
+    color: black;
+    font-family: verdana;
+    font-weight: bold;
+    font-size: 9px;
+    text-align: left;
+    border-style:solid;
+    border-width: 1px;  
+    border-color:WHITE;
+}
+
+div#ui-datepicker-div {
+    width: 17em !important;
+}
+
+.ui-datepicker table {
+    font-size: .8em !important;
+}
+
+.ui-widget {
+    font-family: Verdana,Arial,sans-serif;
+    font-size: .7em !important;
+}
+
+/* clase para los filtros */
+.PrincipalBlanco {
+	BORDER-RIGHT: #ffffff 1px solid; 
+  BORDER-TOP: #ffffff 1px solid; 
+  BORDER-LEFT: #ffffff 1px solid; 
+  BORDER-BOTTOM: #ffffff 1px solid; 
+  BACKGROUND-COLOR: #ffffff;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:10px;
+	color:#000000;
+}
+/* FIN DE LA CLASE LINK */

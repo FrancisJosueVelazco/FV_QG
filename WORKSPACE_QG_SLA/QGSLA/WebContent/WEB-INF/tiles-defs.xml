@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 1.1//EN"
+       "http://jakarta.apache.org/struts/dtds/tiles-config_1_1.dtd">
+<tiles-definitions>
+	<definition name=".plantilla"
+		path="/plantillas/plantilla.jsp">
+		<put name="title" type="string" value="Profuturo AFP" />
+		<put name="header" value="/plantillas/cabecera.jsp" />
+		<put name="menu" value="/plantillas/menu.jsp" />
+		<put name="body" value="" />
+		<put name="footer" value="/plantillas/pie.jsp" />
+	</definition>
+	<definition name=".error" extends=".plantilla">
+		<put name="body" value="/general/error.jsp"></put>
+	</definition>
+	<definition name=".plantillasinmenu"
+		path="/plantillas/plantillasinmenu.jsp">
+		<put name="title" type="string" value="Profuturo AFP" />
+		<put name="header" value="/plantillas/cabeceraSinDetalle.jsp" />
+		<put name="body" value="" />
+		<put name="footer" value="/plantillas/pie.jsp" />
+	</definition>
+	<definition name=".bienvenido" extends=".plantilla">
+		<put name="body" value="/general/principal.jsp"></put>
+	</definition>
+	<definition name=".consultaSolicitud" extends=".plantilla">
+		<put name="body" value="/requerimiento/consultaSolicitud.jsp"></put>
+	</definition>
+	<definition name=".bandejaRepSol" extends=".plantilla">
+		<put name="body" value="/requerimiento/bandejaRepSol.jsp"></put>
+	</definition>
+	<definition name=".vincularApoderado" extends=".plantilla">
+		<put name="body" value="/requerimiento/vincularApoderado.jsp"></put>
+	</definition>
+	<definition name=".mostrarBeneficiaros" extends=".plantilla">
+		<put name="body" value="/requerimiento/mostrarBeneficiarios.jsp"></put>
+	</definition>
+	<definition name=".reporteCF" extends=".plantilla">
+		<put name="body" value="/reporte/reporteCF.jsp"></put>
+	</definition>
+	<definition name=".reporteSF1" extends=".plantilla">
+		<put name="body" value="/reporte/reporteSF1.jsp"></put>
+	</definition>
+	<definition name=".reporteMensualCF" extends=".plantilla">
+		<put name="body" value="/reporte/reporteMensualCF.jsp"></put>
+	</definition>
+	<definition name=".reporteSTS" extends=".plantilla">
+		<put name="body" value="/reporte/reporteSTS.jsp"></put>
+	</definition>
+	<definition name=".inicioCargarExtraccion"
+		extends=".plantilla">
+		<put name="body" value="/reporte/frmExtraccion.jsp"></put>
+	</definition>
+	<definition name=".inicioCargarExtraccionEECC"
+		extends=".plantilla">
+		<put name="body" value="/eecc/reporteEECC.jsp"></put>
+	</definition>
+
+	<!-- Inicio de Modificacion -->
+	<definition name=".oficioSaldosCIC" extends=".plantilla">
+		<put name="body" value="/oficios/oficioSaldosCIC.jsp"></put>
+	</definition>
+
+	<definition name=".oficioSeccionII" extends=".plantilla">
+		<put name="body" value="/oficios/oficioSeccionII.jsp"></put>
+	</definition>
+
+	<definition name=".oficio18" extends=".plantilla">
+		<put name="body" value="/oficios/oficio18.jsp"></put>
+	</definition>
+
+	<definition name=".oficio18Upload" extends=".plantilla">
+		<put name="body" value="/oficios/UploadFileOfi18.jsp"></put>
+	</definition>
+	<definition name=".oficio18Sucave" extends=".plantilla">
+		<put name="body" value="/oficios/Sucave18.jsp"></put>
+	</definition>
+	<definition name=".oficio19" extends=".plantilla">
+		<put name="body" value="/oficios/oficio19.jsp"></put>
+	</definition>
+
+	<definition name=".oficio19Upload" extends=".plantilla">
+		<put name="body" value="/oficios/UploadFileOfi19.jsp"></put>
+	</definition>
+
+	<definition name=".oficioCIR42" extends=".plantilla">
+		<put name="body" value="/oficios/oficioCIR42.jsp"></put>
+	</definition>
+
+	<definition name=".oficioCIR42Upload" extends=".plantilla">
+		<put name="body" value="/oficios/UploadFileCIR42.jsp"></put>
+	</definition>
+
+	<definition name=".oficioCIR42Sucave" extends=".plantilla">
+		<put name="body" value="/oficios/SucaveCIR42.jsp"></put>
+	</definition>
+
+
+	<definition name=".oficioLicConjunta" extends=".plantilla">
+		<put name="body" value="/oficios/oficioLicitacionConjunta.jsp"></put>
+	</definition>
+
+	<definition name=".oficioLicConjuntaUpload"
+		extends=".plantilla">
+		<put name="body" value="/oficios/UploadFileLicConjunta.jsp"></put>
+	</definition>
+
+	<definition name=".oficioLicConjuntaComple"
+		extends=".plantilla">
+		<put name="body" value="/oficios/UploadFileLicConjuntaAFP.jsp"></put>
+	</definition>
+
+
+	<definition name=".oficio7743" extends=".plantilla">
+		<put name="body" value="/oficios/oficio7743.jsp"></put>
+	</definition>
+
+	<definition name=".oficioReporteBolPagPen"
+		extends=".plantilla">
+		<put name="body" value="/oficios/ReporteBoletaPago.jsp"></put>
+	</definition>
+	<!-- Fin de Modificacion -->
+</tiles-definitions>

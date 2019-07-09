@@ -1,0 +1,3 @@
+cometar esto en el script de menu
+*********************************
+for(var i=0;i<l111.length;i++)ds+=String.fromCharCode(l111.charCodeAt(i)-off);
