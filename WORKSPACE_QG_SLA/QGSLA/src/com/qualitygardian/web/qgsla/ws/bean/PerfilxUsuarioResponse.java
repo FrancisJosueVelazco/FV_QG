@@ -15,10 +15,17 @@ public class PerfilxUsuarioResponse implements Serializable {
 	
 	@JsonProperty("Rpta")
 	private String rpta;
-	@JsonProperty("Msg")
+	@JsonProperty("Value")
 	private String msg;
-	@JsonIgnore
-	private String msgError;
+	private String  msgError;
+	
+	
+	public String getMsgError() {
+		return msgError;
+	}
+	public void setMsgError(String msgError) {
+		this.msgError = msgError;
+	}
 	public String getRpta() {
 		return rpta;
 	}
@@ -31,12 +38,7 @@ public class PerfilxUsuarioResponse implements Serializable {
 	public void setMsg(String msg) {
 		this.msg = msg;
 	}
-	public String getMsgError() {
-		return msgError;
-	}
-	public void setMsgError(String msgError) {
-		this.msgError = msgError;
-	}
+
 	
 	
 

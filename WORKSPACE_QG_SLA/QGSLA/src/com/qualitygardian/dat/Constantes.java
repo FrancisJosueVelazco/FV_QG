@@ -3,6 +3,8 @@ package com.qualitygardian.dat;
 public interface Constantes {
 	public static final String PARAM_USER = "parametro_usuario";
 	public static final String PARAM_CLAVE = "parametro_clave";
+	public static final String PARAM_PERFIL = "parametro_perfil";
+	
 	
 	/*public static final String NOM_ARC_CTA_VOL = "ABO_CTA_VOL";
 	public static final String NOM_ARC_CTA_BANCO = "ABO_CTA_BANCO";

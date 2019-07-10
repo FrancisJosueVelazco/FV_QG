@@ -10,6 +10,7 @@ import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import org.apache.axis.session.Session;
 import org.apache.axis.types.URI.MalformedURIException;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -82,14 +83,16 @@ public class SeguridadClientImpl {
 	}
 
 	public PerfilxUsuarioResponse obtenerPerfilxUsrro(Map<String, Object> parametros) {
+		
 		log.info(">>>>>>>>>[INICIO METODO] obtener Perfil");
 		System.out.println("el usario y clave son  " + parametros.get(Constantes.PARAM_USER) + "/"
 				+ parametros.get(Constantes.PARAM_CLAVE));
 
 		String urlWS = Parametros.URL_WS_SEGURIDAD + Parametros.METEDO_PERFILXUSUARIO;
 		urlWS = urlWS + parametros.get(Constantes.PARAM_USER) + "/" + Parametros.CODIGO_APLICACION_QGSLA;
+		System.out.println("URLWS_--------------> "+urlWS);
 		PerfilxUsuarioResponse response = new PerfilxUsuarioResponse();
-
+		String perfil;
 		try {
 
 			URL url = new URL(urlWS);
@@ -101,35 +104,33 @@ public class SeguridadClientImpl {
 				throw new RuntimeException("Falla : HTTP codigo de Error : " + conn.getResponseCode());
 			}
 			BufferedReader br = new BufferedReader(new InputStreamReader((conn.getInputStream())));
-
-			String output=br.readLine();
 			
+			String output;
+			// =br.readLine();
 
 			System.out.println("Respuesta desde Servidor .... \n");
-			
-			System.out.println("Cadena JSON autentica " + output);
-			
+
+			// System.out.println("Cadena JSON autentica " + output);
+
 			// redLine(): Lectura y almacenado de una variable
+			while ((output = br.readLine()) != null) {
+				System.out.println("Cadena JSON autentica " + output);
 
-			/*
-			 * while ((output = br.readLine()) != null) {
-			 * System.out.println("Cadena JSON autentica " + output);
-			 * 
-			 *//** Decodificando Json to Java */
-			/*
-			 * ObjectMapper mapper = new ObjectMapper(); //.readValue--->desealizar
-			 * contenido JSON en un objeto Java. response = mapper.readValue(output,
-			 * PerfilxUsuarioResponse.class);
-			 *//** End-Docodificando *//*
-										 * }
-										 */
-			if (response != null && !response.getRpta().equals("OK")) {
-				response.setMsgError(response.getMsg());
+				/** Decodificando Json to Java */
+				ObjectMapper mapper = new ObjectMapper(); // .readValue--->desealizar
+				// contenido JSON en un objeto Java. response = mapper.readValue(output,
+				response = mapper.readValue(output, PerfilxUsuarioResponse.class);
+				/** End-Docodificando */
 			}
-			log.info(">>>>>>>>>seg_login: Rpta[" + response.getRpta() + "] Msg [" + response.getMsg() + "]");
+				if (response != null && !response.getRpta().equals("OK")) {
+					response.setMsgError(response.getMsg());
+				}
+				perfil=response.getMsg();
+				
+				log.info(">>>>>>>>>seg_login: Rpta[" + response.getRpta() + "] Msg [" + response.getMsg() + "]");
 
-			conn.disconnect();
-
+				conn.disconnect();
+			
 		} catch (MalformedURIException e) {
 			e.printStackTrace();
 		} catch (IOException e) {

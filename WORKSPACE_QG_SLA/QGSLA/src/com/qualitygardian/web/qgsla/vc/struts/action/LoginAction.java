@@ -28,38 +28,36 @@ import com.qualitygardian.web.qgsla.ws.client.SeguridadClient;
 
 import org.apache.commons.codec.binary.Base64;
 
-public class LoginAction extends DispatchAction{
+public class LoginAction extends DispatchAction {
 	Conn conn;
 	Connection c;
-	
-	
+
 	public ActionForward opcionUsuariosSLA(ActionMapping mapping, ActionForm form, HttpServletRequest req,
 			HttpServletResponse res) {
 		HttpSession sesion = req.getSession();
 		CombosFacade combosFacade = new CombosFacade();
 		Conn conn;
 		Connection c;
-		
+
 		try {
 			ReversaForm eForm = (ReversaForm) form;
 			eForm.setIndHabilitar("0");
 			sesion.removeAttribute("lstLocal");
-			List listaTipoReq = combosFacade.obtenerListadoLocales(""); 
+			List listaTipoReq = combosFacade.obtenerListadoLocales("");
 			sesion.setAttribute("lstLocal", listaTipoReq); // SETEAR EN SESSION LIST TIPO REQ ALMC
 			sesion.setAttribute("tipolocal", "01"); // El tipo de proceso por defecto es Reversar a la seccion I
 
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
+
 		return mapping.findForward("Login");
 	}
-	
-	
-	
+
 	public ActionForward loginForm(ActionMapping mapping, ActionForm form, HttpServletRequest req,
 			HttpServletResponse res) throws Exception {
 		LoginForm lform = (LoginForm) form;
+		lform.setPerfil("");
 		lform.setUssro("");
 		lform.setPssord("");
 		lform.setRecordar("0");
@@ -78,7 +76,7 @@ public class LoginAction extends DispatchAction{
 		}
 		return mapping.findForward("Login");
 	}
-	
+
 	public ActionForward signInDirecto(ActionMapping mapping, ActionForm form, HttpServletRequest req,
 			HttpServletResponse res) throws Exception {
 		HttpSession sesion = req.getSession();
@@ -90,9 +88,9 @@ public class LoginAction extends DispatchAction{
 		String pssord = "";
 		String indIn = req.getParameter("indin");
 		int rpta = -1;
-if(ussro.length()<5) {
-	
-}
+		if (ussro.length() < 5) {
+
+		}
 		ussro = (String) sesion.getAttribute("p1");
 		String hostname = req.getRemoteHost();
 		String ip = req.getRemoteAddr();
@@ -109,11 +107,11 @@ if(ussro.length()<5) {
 			return mapping.findForward("Login");
 		}
 	}
-	
+
 	@SuppressWarnings("rawtypes")
-	public ActionForward signInConsulta(ActionMapping mapping, ActionForm form, HttpServletRequest req, HttpServletResponse res)
-			throws Exception {
-		
+	public ActionForward signInConsulta(ActionMapping mapping, ActionForm form, HttpServletRequest req,
+			HttpServletResponse res) throws Exception {
+
 		SeguridadClient seguridadClient = new SeguridadClient();
 		CombosFacade combosFacade = new CombosFacade();
 		HttpSession sesion = req.getSession();
@@ -135,7 +133,7 @@ if(ussro.length()<5) {
 		/********************************************************/
 		Map<String, Object> parametrosWS = new HashMap<String, Object>();
 		parametrosWS.put(Constantes.PARAM_USER, ussro);
-		parametrosWS.put(Constantes.PARAM_CLAVE, Base64.encodeBase64String(pssord.getBytes()));	
+		parametrosWS.put(Constantes.PARAM_CLAVE, Base64.encodeBase64String(pssord.getBytes()));
 		try {
 			loginResponse = seguridadClient.login(parametrosWS);
 			if (loginResponse.getMsgError() != null && !loginResponse.getMsgError().equals("")) {
@@ -164,15 +162,15 @@ if(ussro.length()<5) {
 						// log.info(menuResponse.getMsgError());
 						lform.setMensaje(menuResponse.getMsgError());
 						return mapping.findForward("Login");
-					
+
 					}
 					List listaTipoReq = combosFacade.obtenerListadoLocalesxDominio(ussro, "");
-					sesion.setAttribute("lstLocal", listaTipoReq); 
+					sesion.setAttribute("lstLocal", listaTipoReq);
 					sesion.setAttribute("tipolocal", "01");
 					lform.setMensajeconsulta("Seleccione usuario Local");
 					System.out.println(">>>>>>>>>>>>>>>>>>> Seleccione un usuario Local");
 					return mapping.findForward("Login");
-					//return mapping.findForward("bienvenido");
+					// return mapping.findForward("bienvenido");
 				} else {
 					System.out.println("flagSession = 2");
 					sesion.setAttribute("flagSession", "2");
@@ -198,21 +196,23 @@ if(ussro.length()<5) {
 			/********************************************************/
 			return mapping.findForward("Login");
 		}
-		
+
 	}
-	
+
 	public ActionForward obtenerPerfil(ActionMapping mapping, ActionForm form, HttpServletRequest req,
 			HttpServletResponse res) {
+		HttpSession session=req.getSession();
 		SeguridadClient seguridadClient = new SeguridadClient();
 		LoginForm lform = (LoginForm) form;
 		Map<String, Object> parametrosWS = new HashMap<String, Object>();
 		String ussro = lform.getUssro();
+		String perf=lform.getPerfil();
+		session.setAttribute("p3", perf);
 		parametrosWS.put(Constantes.PARAM_USER, ussro);
-		
-		
+
 		return mapping.findForward("Login");
 	}
-	
+
 	@SuppressWarnings("rawtypes")
 	public ActionForward signIn(ActionMapping mapping, ActionForm form, HttpServletRequest req, HttpServletResponse res)
 			throws Exception {
@@ -229,18 +229,24 @@ if(ussro.length()<5) {
 		/********************************************************/
 		String ussro = lform.getUssro();
 		String pssord = lform.getPssord();
+		String perf=lform.getPerfil();
 		String chkrecordar = lform.getRecordar();
 
 		String hostname = req.getRemoteHost();
 		String ip = req.getRemoteAddr();
 		/********************************************************/
+		Map<String, Object> parametrosWS1 = new HashMap<String, Object>();
 		Map<String, Object> parametrosWS = new HashMap<String, Object>();
 		parametrosWS.put(Constantes.PARAM_USER, ussro);
 		parametrosWS.put(Constantes.PARAM_CLAVE, Base64.encodeBase64String(pssord.getBytes()));
+		
+		parametrosWS1.put(Constantes.PARAM_USER, ussro);
+		
+		
 		sesion.removeValue(lform.getMensaje());
 		try {
 			loginResponse = seguridadClient.login(parametrosWS);
-			
+
 			if (loginResponse.getMsgError() != null && !loginResponse.getMsgError().equals("")) {
 				System.out.println("Imprimiendo el log " + loginResponse.getMsgError());
 				lform.setMensaje(loginResponse.getMsgError());
@@ -253,7 +259,7 @@ if(ussro.length()<5) {
 					// Obteniendo permisos
 					// *******************
 					System.out.println("****Ingresando a Menu***");
-					//PerfilxUsuarioResponse perfilResponse = seguridadClient.obtenerPerfilxUsuario(parametrosWS);
+
 					ObtenerMenuResponse menuResponse = seguridadClient.obtenerMenu(parametrosWS);
 					System.out.println("Imprimiendo el usuario " + menuResponse.getUsuario() + " UserNT "
 							+ menuResponse.getUsuarioNT());
@@ -265,19 +271,28 @@ if(ussro.length()<5) {
 					loginDTO.setSegundoNombre("");
 					loginDTO.setApellidoMaterno("");
 					loginDTO.setApellidoPaterno("");
-					
+
 					sesion.setAttribute("menuPrincipal", menuResponse.getOpciones());
 					sesion.setAttribute("USUARIO", loginDTO);
 					sesion.setAttribute("UserNT", menuResponse.getUsuarioNT());
 					if (menuResponse.getMsgError() != null && !menuResponse.getMsgError().equals("")) {
-						
+
 						System.out.println("Imprimiendo el log" + menuResponse.getMsgError());
 						// log.info(menuResponse.getMsgError());
 						lform.setMensaje(menuResponse.getMsgError());
 						return mapping.findForward("Login");
-					
+
 					}
-					
+
+					 PerfilxUsuarioResponse perfilResponse = seguridadClient.obtenerPerfilxUsuario(parametrosWS1);
+					 
+					 perfilResponse.getMsg();
+					 System.out.println("MSG: "+perfilResponse.getMsg());
+					 perfilResponse.getRpta();
+					 System.out.println("RSTA: "+perfilResponse.getRpta());
+					 perf=perfilResponse.getMsg();
+					 loginDTO.setDescPerfil(perf);
+					 
 					System.out.println("Ingreso al Sistema >>>>>>>");
 					return mapping.findForward("bienvenido");
 				} else {
@@ -304,9 +319,9 @@ if(ussro.length()<5) {
 			/********************************************************/
 			return mapping.findForward("Login");
 		}
-		
+
 	}
-	
+
 	public ActionForward signOut(ActionMapping mapping, ActionForm form, HttpServletRequest req,
 			HttpServletResponse res) throws Exception {
 		HttpSession sesion = req.getSession();
@@ -321,5 +336,5 @@ if(ussro.length()<5) {
 		sesion.invalidate();
 		return mapping.findForward("Login");
 	}
-	
+
 }
