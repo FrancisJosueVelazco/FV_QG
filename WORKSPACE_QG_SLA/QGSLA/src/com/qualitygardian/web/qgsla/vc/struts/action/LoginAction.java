@@ -230,6 +230,7 @@ public class LoginAction extends DispatchAction {
 		String ussro = lform.getUssro();
 		String pssord = lform.getPssord();
 		String perf=lform.getPerfil();
+		String local=lform.getTipolocal();
 		String chkrecordar = lform.getRecordar();
 
 		String hostname = req.getRemoteHost();
@@ -275,6 +276,7 @@ public class LoginAction extends DispatchAction {
 					sesion.setAttribute("menuPrincipal", menuResponse.getOpciones());
 					sesion.setAttribute("USUARIO", loginDTO);
 					sesion.setAttribute("UserNT", menuResponse.getUsuarioNT());
+					//sesion.setAttribute("local", local);
 					if (menuResponse.getMsgError() != null && !menuResponse.getMsgError().equals("")) {
 
 						System.out.println("Imprimiendo el log" + menuResponse.getMsgError());
@@ -292,6 +294,9 @@ public class LoginAction extends DispatchAction {
 					 System.out.println("RSTA: "+perfilResponse.getRpta());
 					 perf=perfilResponse.getMsg();
 					 loginDTO.setDescPerfil(perf);
+					 loginDTO.setTipolocal(local);
+					 sesion.setAttribute("ingresolocal", local);
+					 System.out.println("LOCAL INGRESO: -------->"+local);
 					 
 					System.out.println("Ingreso al Sistema >>>>>>>");
 					return mapping.findForward("bienvenido");

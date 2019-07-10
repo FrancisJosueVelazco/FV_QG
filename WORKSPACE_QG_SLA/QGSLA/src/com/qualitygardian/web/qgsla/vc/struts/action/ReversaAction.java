@@ -13,6 +13,7 @@ import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 import org.apache.struts.actions.DispatchAction;
 
+import com.qualitygardian.web.qgsla.modelo.dto.LoginDTO;
 import com.qualitygardian.web.qgsla.modelo.dto.RegistroRequerimiento;
 import com.qualitygardian.web.qgsla.modelo.facade.CombosFacade;
 import com.qualitygardian.web.qgsla.modelo.facade.ReversaFacade;
@@ -25,6 +26,7 @@ public class ReversaAction extends DispatchAction{
 	public ActionForward insertarRegistroSla(ActionMapping mapping, ActionForm form, HttpServletRequest req,
 			HttpServletResponse res) {
 		
+		LoginDTO dto=new LoginDTO();
 		HttpSession session=req.getSession();
 		session.removeAttribute("formConsultaSolicitud");
 		session.removeAttribute("tipo_atencion");
@@ -35,6 +37,8 @@ public class ReversaAction extends DispatchAction{
 		session.removeAttribute("complejidad");
 		session.removeAttribute("criticidad");
 		
+		String tipo=(String)session.getAttribute("ingresolocal");  
+		System.out.println("LOCAL: -------------->"+tipo);
 		String usuario=session.getAttribute("USUARIO").toString();
 		
 		RegistroRequerimiento  requerimiento=new RegistroRequerimiento();
@@ -48,6 +52,7 @@ public class ReversaAction extends DispatchAction{
 		requerimiento.setHora_recepcion(eform.getHora_recepcion());
 		requerimiento.setComplejidad(eform.getComplejidad());
 		requerimiento.setCriticidad(eform.getCriticidad());
+		requerimiento.setTipolocal(tipo);
 		//requerimiento.setUsuRegistro(usuario);
 		//requerimiento.setUsuModifica(usuario);
 		try {

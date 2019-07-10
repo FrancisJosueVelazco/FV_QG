@@ -37,6 +37,8 @@ public class ConsultarReversaDao {
 				cas.setString(6, dto.getComplejidad());
 				cas.setString(7, dto.getCriticidad());
 				cas.setString(8, dto.getTipolocal());
+				cas.setString(8, dto.getTipolocal());
+				System.out.println("LOCAL :" +dto.getTipolocal());
 				cas.execute();
 				
 			} catch (Exception e) {

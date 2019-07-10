@@ -35,12 +35,20 @@ public class ReversaForm extends ActionForm{
 	  private String complejidad;
 	  private String criticidad;
 	  
+	  private String local;
 	  
 	  
 	  
 	  
 	  
-	  public String getTipo_atencion() {
+	  
+	  public String getLocal() {
+		return local;
+	}
+	public void setLocal(String local) {
+		this.local = local;
+	}
+	public String getTipo_atencion() {
 		return tipo_atencion;
 	}
 	public void setTipo_atencion(String tipo_atencion) {
