@@ -265,6 +265,7 @@ if(ussro.length()<5) {
 					loginDTO.setSegundoNombre("");
 					loginDTO.setApellidoMaterno("");
 					loginDTO.setApellidoPaterno("");
+					
 					sesion.setAttribute("menuPrincipal", menuResponse.getOpciones());
 					sesion.setAttribute("USUARIO", loginDTO);
 					sesion.setAttribute("UserNT", menuResponse.getUsuarioNT());
